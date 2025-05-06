@@ -1,28 +1,17 @@
-const fs = require('fs');
-const jsc = require('jsverify');
-
-function mergeCall(arr) {
-    // exists so user only has to put in array
-    if (arr.length == 0 || arr.length == 1) {return arr;}
-    mergeSort(arr, console.log);
+function mergeCall(arr, int) {
+    //if (arr.length == 0 || arr.length == 1) {return;}
+    mergeSort(arr, console.log, int);
 }
 
-function mergeSort(arr, cb) {
-    // set up parallel
-    var Parallel = require('paralleljs'),       // imports library
+
+function mergeSort(arr, cb, int) {
+    var Parallel = require('paralleljs'),     
         p = new Parallel(arr); 
 
-    // map: end of mergesort makes each item own array, do that while wrapping
-    // would this be the recursive step? Can make each array item while processing
     p.map(function(i) { return [i];})
 
-    // go through each array and add them together in sorted order
-    // pretty much merge function of typical mergesort
-    // note: merge is NOT recursive
     .reduce(function(d) {
-        // d[0] = first array
-        // d[1] = second array 
-        // referenced vector addition code
+
         var finArr = new Array(d[0].length + d[1].length);  // the merging of the two arrays, make array to put values into to return
         var i = 0; 
         var j = 0;                              // will use to iterate through each array, i for first and j for second
@@ -55,12 +44,28 @@ function mergeSort(arr, cb) {
     
     })
 
+    //.then(cb); //callback
+
+
     .then(function(cb) {
-      jsc.assert(JSON.stringify(cb) == JSON.stringify([1,2,2,3,3,3,3,3,4,5,5,6,7,8,9,9]));
-      return cb;
-    }); //callback
+        if (int == 1) {jsc.assert(JSON.stringify(cb) == JSON.stringify([1,2,2,3,3,3,3,3,4,5,5,6,7,8,9,9]));}
+        if (int == 2) {jsc.assert(JSON.stringify(cb) == JSON.stringify([]));}
+        if (int == 3) {jsc.assert(JSON.stringify(cb) == JSON.stringify([10]));}
+        
+        return cb;
+      }); //callback
 }
 
-var testGraph1 = [3,5,9,3,4,6,7,2,1,8,3,3,5,2,3,9];
-mergeCall(testGraph1);
+var arr1 = [3,5,9,3,4,6,7,2,1,8,3,3,5,2,3,9];
 
+var arr2 = [];
+
+var arr3 = [10];
+
+async function run() {
+    await mergeCall(arr1, 1);
+    await mergeCall(arr2, 2);
+    await mergeCall(arr3, 3);
+}
+  
+run();
