@@ -1,3 +1,5 @@
+const jsc = require('jsverify');
+
 function mergeCall(arr) {
     // exists so user only has to put in array
     if (arr.length == 0 || arr.length == 1) {return arr;}
