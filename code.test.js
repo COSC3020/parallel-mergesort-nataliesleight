@@ -76,11 +76,13 @@ var arr3 = [10];
 
 var arr4 = [3,2,1];
 
-async function run() {
-    await mergeCall(arr1, 1);
-    await mergeCall(arr2, 2);
-    await mergeCall(arr3, 3);
-    await mergeCall(arr4, 4);
-}
+mergeCall(arr1, 1);
+
+//async function run() {
+  //  await mergeCall(arr1, 1);
+    //await mergeCall(arr2, 2);
+    //await mergeCall(arr3, 3);
+    //await mergeCall(arr4, 4);
+//}
   
-run();
+//run();
