@@ -13,7 +13,7 @@ the function and run automatically when you commit through a GitHub action.
 What is the span of the parallel program, in terms of worst-case $\Theta$? Hint:
 It may help to consider the DAG of the parallel program.
 
-The span of the parallel program is $\Theta(n/2)$. This is because at the height of the program, each value in the array is being sorted by pairs in groups of 2. 
+The span of the parallel program is $\Theta(logn)$. This is during parallelization, 2 segments are added to each other until each have been combined into one array. This is similar to a binary tree, which has a depth of $logn$. 
 
 
 ### Testing
@@ -22,9 +22,9 @@ The testing for this code is a little unconventional. My code first tests for in
 
 ### Sources
 
-I references this link for my mergesort implementation: https://www.geeksforgeeks.org/merge-sort/# 
+I referenced this link for my mergesort implementation: https://www.geeksforgeeks.org/merge-sort/# 
 
-I received help from Lars Kothoff.
+I received help from Lars Kothoff and the TA.
 
 I heavily referenced the Map Reduce code provided in the slide notes. 
 
