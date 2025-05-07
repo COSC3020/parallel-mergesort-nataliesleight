@@ -1,12 +1,15 @@
 const jsc = require('jsverify');
 
-function mergeCall(arr) {
+function mergeCall(arr, int) {
     // exists so user only has to put in array
-    if (arr.length == 0 || arr.length == 1) {return arr;}
-    mergeSort(arr, console.log);
+    if (arr.length == 0 || arr.length == 1) {
+        if (int == 2) { jsc.assert(JSON.stringify(arr) == JSON.stringify([])); }
+        if (int == 3) { jsc.assert(JSON.stringify(arr) == JSON.stringify([10])); }
+    }
+    mergeSort(arr, console.log, int);
 }
 
-function mergeSort(arr, cb) {
+function mergeSort(arr, cb, int) {
     // set up parallel
     var Parallel = require('paralleljs'),       // imports library
         p = new Parallel(arr); 
@@ -55,10 +58,29 @@ function mergeSort(arr, cb) {
     })
 
     .then(function(cb) {
-      jsc.assert(JSON.stringify(cb) == JSON.stringify([1,2,2,3,3,3,3,3,4,5,5,6,7,8,9,9]));
+
+        if (int == 0) { jsc.assert(JSON.stringify(cb) == JSON.stringify([1,2,2,3,3,3,3,3,4,5,5,6,7,8,9,9])); }
+        if (int == 4) { jsc.assert(JSON.stringify(cb) == JSON.stringify([1,2,3])); }
       return cb;
     }); //callback
 }
 
-var testGraph1 = [3,5,9,3,4,6,7,2,1,8,3,3,5,2,3,9];
-mergeCall(testGraph1);
+v//ar testGraph1 = [3,5,9,3,4,6,7,2,1,8,3,3,5,2,3,9];
+//mergeCall(testGraph1);
+
+var arr1 = [3,5,9,3,4,6,7,2,1,8,3,3,5,2,3,9];
+
+var arr2 = [];
+
+var arr3 = [10];
+
+var arr4 = [3,2,1];
+
+async function run() {
+    await mergeCall(arr1, 1);
+    await mergeCall(arr2, 2);
+    await mergeCall(arr3, 3);
+    await mergeCall(arr4, 4);
+}
+  
+run();
