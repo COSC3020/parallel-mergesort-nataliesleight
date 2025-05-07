@@ -76,7 +76,7 @@ var arr3 = [10];
 
 var arr4 = [3,2,1];
 
-//mergeCall(arr1, 1);
+mergeCall(arr1, 1);
 //mergeCall(arr2, 2);
 //mergeCall(arr3, 3);
 mergeCall(arr4, 4);
