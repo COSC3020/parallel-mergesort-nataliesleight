@@ -77,8 +77,8 @@ var arr3 = [10];
 var arr4 = [3,2,1];
 
 mergeCall(arr1, 1);
-jsc.assert(JSON.stringify(mergeCall(arr2, 2)) == JSON.stringify([]));
-jsc.assert(JSON.stringify(mergeCall(arr3, 3)) == JSON.stringify([10]));
+assert(mergeCall(arr2, 2) == []);
+assert(mergeCall(arr3, 3) == [10]);
 mergeCall(arr4, 4);
 
 
