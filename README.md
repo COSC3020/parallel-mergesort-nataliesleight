@@ -13,6 +13,8 @@ the function and run automatically when you commit through a GitHub action.
 What is the span of the parallel program, in terms of worst-case $\Theta$? Hint:
 It may help to consider the DAG of the parallel program.
 
+The span of the parallel program is $\Theta(n/2)$. This is because at the height of the program, each value in the array is being sorted by pairs in groups of 2. 
+
 
 ### Testing
 
