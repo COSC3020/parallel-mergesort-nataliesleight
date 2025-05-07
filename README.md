@@ -14,6 +14,10 @@ What is the span of the parallel program, in terms of worst-case $\Theta$? Hint:
 It may help to consider the DAG of the parallel program.
 
 
+### Testing
+
+The testing for this code is a little unconventional. My code first tests for input size of 0 or 1, returning the array for assertion of correct value outside. For others, they call the function with their array and an integer I used to assert it with the right value. This is done in the '.then' callback function. An if statment is used to check which assertion to use.
+
 ### Sources
 
 I references this link for my mergesort implementation: https://www.geeksforgeeks.org/merge-sort/# 
