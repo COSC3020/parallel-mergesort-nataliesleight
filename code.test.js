@@ -59,7 +59,7 @@ function mergeSort(arr, cb, int) {
 
     .then(function(cb) {
 
-        if (int == 0) { jsc.assert(JSON.stringify(cb) == JSON.stringify([1,2,2,3,3,3,3,3,4,5,5,6,7,8,9,9])); }
+        if (int == 1) { jsc.assert(JSON.stringify(cb) == JSON.stringify([1,2,2,3,3,3,3,3,4,5,5,6,7,8,9,9])); }
         if (int == 4) { jsc.assert(JSON.stringify(cb) == JSON.stringify([1,2,3])); }
       return cb;
     }); //callback
