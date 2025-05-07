@@ -3,7 +3,7 @@ const jsc = require('jsverify');
 function mergeCall(arr, int) {
     // exists so user only has to put in array
     if (arr.length == 0 || arr.length == 1) {
-        if (int == 2) { jsc.assert(arr.length == 0; }
+        if (int == 2) { jsc.assert(arr.length == 0); }
         if (int == 3) { jsc.assert(arr[0] == 10); }
     }
     mergeSort(arr, console.log, int);
