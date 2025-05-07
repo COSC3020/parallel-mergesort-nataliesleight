@@ -65,8 +65,6 @@ function mergeSort(arr, cb, int) {
     }); //callback
 }
 
-//var testGraph1 = [3,5,9,3,4,6,7,2,1,8,3,3,5,2,3,9];
-//mergeCall(testGraph1);
 
 var arr1 = [3,5,9,3,4,6,7,2,1,8,3,3,5,2,3,9];
 
@@ -77,8 +75,8 @@ var arr3 = [10];
 var arr4 = [3,2,1];
 
 mergeCall(arr1, 1);
-assert(mergeCall(arr2, 2) == []);
-assert(mergeCall(arr3, 3) == [10]);
+assert(JSON.stringify(mergeCall(arr2, 2)) == JSON.stringify([]));
+assert(JSON.stringify(mergeCall(arr3, 3)) == JSON.stringify([10]));
 mergeCall(arr4, 4);
 
 
