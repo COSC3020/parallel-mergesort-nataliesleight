@@ -65,7 +65,7 @@ function mergeSort(arr, cb, int) {
     }); //callback
 }
 
-v//ar testGraph1 = [3,5,9,3,4,6,7,2,1,8,3,3,5,2,3,9];
+//var testGraph1 = [3,5,9,3,4,6,7,2,1,8,3,3,5,2,3,9];
 //mergeCall(testGraph1);
 
 var arr1 = [3,5,9,3,4,6,7,2,1,8,3,3,5,2,3,9];
