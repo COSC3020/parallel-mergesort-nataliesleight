@@ -13,7 +13,7 @@ the function and run automatically when you commit through a GitHub action.
 What is the span of the parallel program, in terms of worst-case $\Theta$? Hint:
 It may help to consider the DAG of the parallel program.
 
-The span of the parallel program is $\Theta(logn)$. This is during parallelization, 2 segments are added to each other until each have been combined into one array. This is similar to a binary tree, which has a depth of $logn$. 
+The span of the parallel program is $\Theta(n)$. This is because during parallelization, 2 segments are added to each other until each have been combined into one array. Because there are $n$ segments total, that many segments (minus one) need to be merged together. Thus, there are $n-1$ merges which makes the runtime $n$.
 
 
 ### Testing
