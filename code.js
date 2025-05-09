@@ -52,8 +52,5 @@ function mergeSort(arr, cb) {
     
     })
 
-    .then(function(cb) {
-      jsc.assert(JSON.stringify(cb) == JSON.stringify([1,2,2,3,3,3,3,3,4,5,5,6,7,8,9,9]));
-      return cb;
-    }); //callback
+    .then(cb); //callback
 }
